@@ -9,7 +9,7 @@ description: 在搜索未知来源或跨文件关系前派发 evidence；步骤�
 
 ## 选择与交接
 
-- **evidence**：定位下一步所需的关键原始信息，覆盖源码、文档、网络、知识库、工具用法及运行状态。可从问题和线索起步，不要求先找到具体来源；交付读取位置、必要范围或只读查询方法及简短导航，短小原文可直接带回。按 [evidence-packet.md](references/evidence-packet.md) 交接，实际消费者据原文判断；证据充分即停止，不重复搜索。
+- **evidence**：从问题和已有线索起步，在只读边界内自主选择文件、命令、API、网络、知识库或运行状态查询，获取下一步所需的关键原始信息。交付读取位置、必要范围或查询方法及简短导航，短小原文或查询结果可直接带回。按 [evidence-packet.md](references/evidence-packet.md) 交接，实际消费者据原始证据判断，证据充分即停止。
 - **experiment / advanced-experiment**：承接路径不清晰、多层问题交织等可独立交付的较大探索，带回解决方法、验证证据与重要发现。短小或需主代理持续裁决的工作直接做；十来分钟只是成本线索，不是硬门槛。困难/视觉实验仍须满足独立交付条件。读 [experiment-lifecycle.md](references/experiment-lifecycle.md)。
 - **operator**：对象、步骤和判定明确，且执行有一定规模、预计输出较多或需多轮观察时才委派；短小且结果简短的执行直接做，步骤明确本身不构成委派理由。按完整执行段判断规模，委派后覆盖到下一个必要判断点，包含连续操作、等待、既定检查和结果汇总，不按每个脚本、截图或采样拆派。读 [operator-execution.md](references/operator-execution.md)。
 
