@@ -1,6 +1,6 @@
 ---
 name: subagent-orchestration
-description: 在搜索未知来源或跨文件关系前派发 evidence；在执行步骤已确定的构建、测试、打包、批量操作，以及长输出或多轮观察操作前派发 operator。负责创建、复用、等待与接纳；实验须较大且可独立交付。用户禁用、角色不可用、一次已知位置短读取或即时状态查询即可闭合时不触发；evidence 与 operator 不加载本编排流程。
+description: 在搜索未知来源或跨文件关系前派发 evidence；步骤与判定明确，且执行有一定规模、预计输出较多或需多轮观察时派发 operator。负责创建、复用、等待与接纳；实验须较大且可独立交付。用户禁用、角色不可用、已知位置短读取或短小且结果简短的执行不触发；evidence 与 operator 不加载本编排流程。
 ---
 
 # Subagent Orchestration
@@ -11,7 +11,7 @@ description: 在搜索未知来源或跨文件关系前派发 evidence；在执�
 
 - **evidence**：定位下一步所需的关键原始信息，覆盖源码、文档、网络、知识库、工具用法及运行状态。可从问题和线索起步，不要求先找到具体来源；交付读取位置、必要范围或只读查询方法及简短导航，短小原文可直接带回。按 [evidence-packet.md](references/evidence-packet.md) 交接，实际消费者据原文判断；证据充分即停止，不重复搜索。
 - **experiment / advanced-experiment**：承接路径不清晰、多层问题交织等可独立交付的较大探索，带回解决方法、验证证据与重要发现。短小或需主代理持续裁决的工作直接做；十来分钟只是成本线索，不是硬门槛。困难/视觉实验仍须满足独立交付条件。读 [experiment-lifecycle.md](references/experiment-lifecycle.md)。
-- **operator**：执行对象、步骤和判定明确的构建、测试、打包、批量处理，以及其他长输出或需多轮观察的操作。一次委派覆盖到下一个必要判断点的完整执行段，包含连续操作、等待、既定检查和结果汇总，不按每个脚本、截图或采样拆派；一次即时状态查询可直接做。读 [operator-execution.md](references/operator-execution.md)。
+- **operator**：对象、步骤和判定明确，且执行有一定规模、预计输出较多或需多轮观察时才委派；短小且结果简短的执行直接做，步骤明确本身不构成委派理由。按完整执行段判断规模，委派后覆盖到下一个必要判断点，包含连续操作、等待、既定检查和结果汇总，不按每个脚本、截图或采样拆派。读 [operator-execution.md](references/operator-execution.md)。
 
 先复用有效结果；上下文相关、归属清楚时用 `followup_task` 续派，否则 `spawn_agent`。固定角色显式 `fork_turns="none"`，任务给目标、范围、必要来源和预期交付；写入再给文件所有权、用户改动及恢复边界。任务说明不要求固定表格。派发失败时按实际错误处理，不空等。
 
